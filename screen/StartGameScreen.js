@@ -1,18 +1,26 @@
 import react from "react";
-import { View, Text, StyleSheet, TextInput, Button } from "react-native-web";
+import { View, Text, StyleSheet, Button } from "react-native-web";
+
+import Card from "../components/card";
+import Colors from "../constants/colors";
+import Input from "../components/input";
 
 const StartGameScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Start a new Game !</Text>
-      <View style={styles.inputContainer}>
+      <Card style={styles.inputContainer}>
         <Text style={styles.innerTitle}>Select a Number </Text>
-        <TextInput />
+        <Input style={styles.input} />
         <View style={styles.buttonContainer}>
-          <Button title="Reset" onPress={() => {}} />
-          <Button title="Confirm" onPress={() => {}} />
+          <View style={styles.button}>
+            <Button title="Reset" onPress={() => {}} color={Colors.secondary} />
+          </View>
+          <View style={styles.button}>
+            <Button title="Confirm" onPress={() => {}} color={Colors.primary} />
+          </View>
         </View>
-      </View>
+      </Card>
     </View>
   );
 };
@@ -31,12 +39,6 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: "80%",
     alignItem: "center",
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    shadowOpacity: 0.6,
-    backgroundColor: "white",
-    padding: 50,
   },
   innerTitle: {
     textAlign: "center",
@@ -48,9 +50,16 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     width: "100%",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     paddingHorizontal: 15,
     paddingVertical: 30,
+    padding: 10,
+  },
+  button: {
+    width: 80,
+  },
+  input: {
+    width: 40,
   },
 });
 
