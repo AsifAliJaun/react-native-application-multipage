@@ -9,7 +9,17 @@ const Header = (props) => {
   );
 };
 const styles = StyleSheet.create({
-  header: {},
-  headerTitle: {},
+  header: {
+    width: "100%",
+    height: 60,
+    paddingTop: 36,
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  headerTitle: {
+    color: "black",
+    fontSize: 18,
+  },
 });
 export default Header;
